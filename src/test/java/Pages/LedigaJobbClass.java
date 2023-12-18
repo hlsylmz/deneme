@@ -9,18 +9,12 @@ public class LedigaJobbClass {
     Locator cookies;
     Locator jobbLink;
     Locator ledigaTjanster;
-    Locator sokfalt;
-    Locator region;
-    Locator stockholm;
 
     public LedigaJobbClass(Page page) {
         this.page = page;
         this.cookies = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Jag accepterar alla cookies"));
         this.jobbLink = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Jobb").setExact(true));
         this.ledigaTjanster = page.locator("[id*=react] [href*=lediga][class]");
-        //this.sokfalt = page.locator("[id*=job_search] [name=search_text]");
-        this.region = page.locator("[id*=search] [id*=search_region]");
-
     }
 
     public void ledigaJobb() {

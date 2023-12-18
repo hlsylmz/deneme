@@ -13,8 +13,6 @@ public class NyhetsBrevClass {
     Locator epost;
     Locator skickaButton;
     Locator spanText;
-
-    String store;
     String[] stores = new String[]{"Avesta", "Eskilstuna", "Gävle", "Halmstad"};
 
     public String valjStore() {
@@ -29,9 +27,6 @@ public class NyhetsBrevClass {
         this.cookies = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
                 .setName("Jag accepterar alla cookies"));
         this.epost =page.locator("#footer").getByPlaceholder("Din e-postadress");
-
-        // <input required="" type="email" name="email" autocomple…/> aka getByRole(AriaRole.MAIN).getByPlaceholder("Din e-postadress")
-        // <input required="" type="email" name="email" autocomple…/> aka locator("#footer").getByPlaceholder("Din e-postadress")
         this.skickaButton=page.locator("#footer").getByLabel("Anmäl dig till vårt nyhetsbrev");
         this.spanText=page.locator("#footer").getByText
                 ("För att kunna slutföra din registrering kommer ett mail" +
